@@ -8,7 +8,7 @@ struct node {
 
 struct node *list = NULL;
 
-struct node* find(int key, struct node *list, struct node **prev) {
+struct node *find(int key, struct node *list, struct node **prev) {
   struct node *aux = list;
   while(aux != NULL && aux->key != key) {
     *prev = aux;
@@ -18,7 +18,7 @@ struct node* find(int key, struct node *list, struct node **prev) {
 }
 
 int insert(int key, struct node **list) {
-  struct node *new_node;
+  struct node *new_node = NULL;
   struct node *aux;
   struct node *prev;
 
@@ -38,8 +38,8 @@ int insert(int key, struct node **list) {
 }
 
 int delete(int key, struct node **list) {
-  struct node * aux;
-  struct node * prev;
+  struct node *aux;
+  struct node *prev;
 
   aux = find(key, *list, &prev);
 
